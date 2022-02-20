@@ -5,7 +5,7 @@ const hoursEl = document.getElementById("hours");
 const minutesEl = document.getElementById("minutes");
 const secondsEl = document.getElementById("seconds");
 
-const endDate = '21 feb 2022';
+const endDate = '21 feb 2023';
 
 function countdown() {
     const endingDate = new Date(endDate);
