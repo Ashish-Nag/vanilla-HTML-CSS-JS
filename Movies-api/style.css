@@ -1,0 +1,151 @@
+:root {
+  --bg-color: #5d001e;
+  --font-color: #e3e2df;
+  --dark-font-color: #e3afbc;
+  --bold-pink: #9a1750;
+  --extra-color: #ee4c7c;
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-color);
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  margin: 0%;
+}
+
+header {
+  background-color: var(--extra-color);
+  padding: 1rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.next {
+  width: 0;
+  height: 0;
+  border-bottom: 10px solid transparent;
+  border-top: 10px solid transparent;
+  border-left: 20px solid var(--dark-font-color);
+  cursor: pointer;
+}
+.previous {
+  width: 0;
+  height: 0;
+  border-bottom: 10px solid transparent;
+  border-top: 10px solid transparent;
+  border-right: 20px solid var(--dark-font-color);
+  cursor: pointer;
+}
+
+.next:hover {
+  border-left: 20px solid #9a1750;
+}
+.previous:hover {
+  border-right: 20px solid #9a1750;
+}
+
+header input {
+  padding: 0.8rem 1rem;
+  border-radius: 20px;
+  background-color: transparent;
+  color: var(--font-color);
+  text-align: center;
+  border: 2px solid var(--dark-font-color);
+  font-family: inherit;
+}
+
+header input::placeholder {
+  color: var(--font-color);
+  text-align: center;
+}
+
+header input:focus {
+  outline: none;
+  background-color: var(--bold-pink);
+}
+.container {
+  max-width: 96vw;
+  margin: auto;
+  margin-top: 2rem;
+}
+main {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.movie {
+  position: relative;
+  background-color: var(--bold-pink);
+  width: 300px;
+  border-radius: 3px;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.3);
+  margin: 2rem;
+  overflow: hidden;
+}
+
+.movie img {
+  max-width: 100%;
+}
+
+.movie-info {
+  color: var(--font-color);
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem 1rem;
+  letter-spacing: 1px;
+}
+
+.movie-info h3 {
+  margin: 0;
+}
+
+.movie-info span {
+  background-color: var(--dark-font-color);
+  border-radius: 3px;
+  font-weight: bold;
+  padding: 0.25rem 0.5rem;
+}
+
+.movie-info span.green {
+  color: darkgreen;
+}
+.movie-info span.orange {
+  color: rgb(182, 124, 17);
+}
+.movie-info span.red {
+  color: rgb(252, 61, 61);
+}
+
+.overview {
+  background-color: var(--dark-font-color);
+  padding: 0.5rem 1rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  transform: translateY(100%);
+  transition: transform 0.3s ease-in;
+  max-height: 100%;
+  overflow: auto;
+}
+
+.overview h3 {
+  color: var(--bold-pink);
+  margin-top: 0;
+}
+
+.overview p {
+  color: var(--bold-pink);
+  font-weight: normal;
+  font-size: 15px;
+}
+
+.movie:hover .overview {
+  transform: translateY(0);
+}
